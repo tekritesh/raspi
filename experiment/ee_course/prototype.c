@@ -266,6 +266,15 @@ g_core.revision = 0.0;
 
 // -- process
 
+  if (!strcmp(model,"d03115"))
+  {
+  g_core.model = 0xd03115;
+  g_core.memory_size_gb = 8;
+  g_core.revision = 1.5;
+  return;
+  } 
+
+
   if (!strcmp(model,"d03114"))
   {
   g_core.model = 0xd03114;
@@ -545,7 +554,7 @@ fprintf(H2,"# .tests complete .time taken \n");
 int main(void)
 {
 double temp_baseline;
-char model[40];
+char  model[40];
 char cpucore[20];
 FILE *H1,*H2;
 uint32_t testruns;
