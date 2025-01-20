@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "raspi-haunt"
+version = "0.1.0"
+description = ""
+authors = ["tekritesh <ritesh.tekriwal03@gmail.com>"]
+readme = "README.md"
+packages = [{include = "raspi_haunt"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+soco = "^0.30.6"
+libpurecoollink = "^0.4.2"
+libdyson-neon = "^1.4.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
