@@ -55,16 +55,16 @@ This tools helps with the following:
 [More info on the diffent OS](https://www.raspberrypi.com/software/operating-systems/)
 
 2. Setup Login Credentials and Enable SSH
-![LoginSSH](../img/Screenshot 2025-01-13 at 13.14.37.png)
+![LoginSSH](../img/login_ssh.png)
 
 More info on [SSH](https://en.wikipedia.org/wiki/Secure_Shell)
 
 2. Setup Wifi
-![Wifi](../img/Screenshot%202025-01-13%20at%2013.14.44.png)
+![Wifi](../img/wifi.png)
 
 
 Once you have specified all the above details, you can go ahead and **Write** the OS image to the SD Card. 
-![OSSelection](../img/Screenshot 2025-01-13 at 13.13.00.png)
+![OSDownload](../img/os_download.png)
 
 This should take roughly 15mins depending upon your internet connection. Once the writing is done, the tool will notify you that it is safe to eject the SD card from your Computer. 
 
@@ -104,7 +104,7 @@ If you do not need the Desktop variant and are cool enough with the headless ver
     ``` 
         ssh <raspberrypiName>.local
     ```
-    ![SSHLogin](../img/Screenshot 2025-01-13 at 13.40.59.png)
+    ![SSHLoginEthernet](../img/ssh_ethernet.png)
 
     4. If all goes well, you should be prompted to key in the password that you had set in 4.1.2
 
@@ -116,13 +116,13 @@ If you do not need the Desktop variant and are cool enough with the headless ver
     ``` 
          ssh <raspberrypiName>.local
     ```
-    ![SSHLogin](../img/Screenshot 2025-01-13 at 13.40.59.png)
+    ![SSHLoginWifi](../img/ssh_ethernet.png)
     
     If this commands timeouts, this means that your computer doesn't identify the raspberrypi name and you will have to knwo the IP address of your Rpi. Repeat all the steps 4.3.1 and once you have logged in, run the following command
     ``` 
         hostname -I
     ```
-    ![hostname](../img/Screenshot 2025-01-13 at 13.41.17.png)
+    ![hostname](../img/hostname.png)
     
     *192.168.4.49* is the IP address you are looking for. 
     
@@ -133,6 +133,8 @@ If you do not need the Desktop variant and are cool enough with the headless ver
     ```
     
     Enter the password when prompted and you are in. You are successfully connected to the RPi wirelessly.
+
+    ![sshWifi](../img/ssh_wifi.png)
 
 #### 4.4 Update and upgrade all the software
 
@@ -189,7 +191,7 @@ From you host PC use **scp** to copy over the files to the Raspberry Pi.
 
 Once the file is safely across, log into the Raspberry Pi and go to the directory where the file was placed.
 
-![SCP](../img/Screenshot 2025-01-13 at 13.47.36.png)
+![SCP](../img/scp.png)
 
 Verify if the file looks okay and then compile hellow.c.
 You can run the following to view the contents of the file
@@ -209,7 +211,7 @@ Next you can execute the compiled code to see the results
 ./hellow
 ```
 
-![Compile](../img/Screenshot 2025-01-13 at 13.48.44.png)
+![Compile](../img/compile.png)
 
 
 If you are susccessfully able to see the results, it is safe to conclude that your RPi setup is working. 
@@ -226,14 +228,14 @@ rsync -a --exclude="/.*"  pi@192.168.4.49:<RPi Folder Path>. <Host PC Folder>/.
 
 ```
 
-![Rsync](../img/Screenshot 2025-01-13 at 14.06.09.png)
+![Rsync](../img/rsync.png)
 
 This keeps the files in the folder names *raspi* on the Host PC upto date with the same folder on the RPI. 
 The exclude arguements ignores any hidden folder such as git history or files
 
 #### 4.5 Test Experiment
 
-1. Verison Control (Github)
+1. Setup Verison Control (Github)
 https://github.com/tekritesh/raspi
 
 2. 
