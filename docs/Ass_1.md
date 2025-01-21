@@ -236,16 +236,77 @@ The exclude arguements ignores any hidden folder such as git history or files
 #### 4.5 Test Experiment
 
 1. Setup Verison Control (Github)
+First things first, a github repository was created to keep all the code in one place. 
+
 https://github.com/tekritesh/raspi
 
-2. 
+2. Downloaded ee course.zip from Canvas: located files/Assignments/ee course.zip was unzipped in this repo [here](https://github.com/tekritesh/raspi/tree/main/experiment/ee_course)
+
+3. Unzip, i.e., unzip ee course.zip
+
+4. Run **rsync** to copy the experiment code onto the RPi. 
+
+```
+rsync -a --exclude="/.*"  pi@192.168.4.49:/home/pi/Work/raspi/. raspi/.
+
+```
+
+5. Install Gnuplot on RPi
+
+```
+sudo apt install gnuplot
+
+```
+
+6. Execute the experiment shell script
+
+```
+./run.sh
+
+```
+
+This errors out since it is not able to find the version of RPi
+
+![exp1](../img/exp_1.png)
+
+On further investigation it was found that the error was in [*prototype_translate_information*]( https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/prototype.c#L257) function where the RPi used did not match any of the given models. So appropriate changes were by adding this to the [code] https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/prototype.c#L257
+
+```
+ if (!strcmp(model,"d03115"))
+  {
+  g_core.model = 0xd03115;
+  g_core.memory_size_gb = 8;
+  g_core.revision = 1.5;
+  return;
+  } 
+
+```
+These details can be found by running the following command on the RPi Terminal
+
+```
+cat /proc/cpuinfo
+
+```
+
+![cpu_info](../img/cpu_info.png)
 
 
+Rerunning the shell script, the code executed successfully and generated the expected graphs.
+
+![exp_results](../img/exp_results.png)
 
 
 ## 5. Results:
-• Presentation of the data, usually in the form of text, tables, and figures
-• Avoid interpretation at this stage; focus on presenting the facts
+
+#### Total Time to Run the Tests
+![plot_tests](../experiment/ee_course/plot_tests.jpg)
+
+#### Memory Library Tests
+![plot_memlib](../experiment/ee_course/plot_memlib.jpg)
+
+#### Memory Subsystem Tests
+![plot_memsys](../experiment/ee_course/plot_memsys.jpg)
+
 
 ## 6. Discussion:
 • Interpretation of the results and their implications
@@ -265,11 +326,10 @@ MLA, Chicago)
 - Wikipedia
 
 ## 9. Acknowledgments:
-• Recognize individuals, organizations, or funding agencies that contributed to the research
+
 
 ## 10. Appendices:
-• Include additional information that is too detailed for the main body of the report
-• Supplementary data, questionnaires, code, etc.
+
 
 ## 11. Figures and Tables:
 • Numbered and labeled appropriately
