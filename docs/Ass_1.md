@@ -240,6 +240,11 @@ First things first, a github repository was created to keep all the code in one 
 
 https://github.com/tekritesh/raspi
 
+*Optional* Setup VSCode SSH 
+If you are using VSCode as your IDE for coding, you can install the [Remote SSH Client](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) which let's you edit code and access all the files from the RPi as if it were host computer.  
+
+![vscode_ssh](../img/vscode_ssh.png)
+
 2. Downloaded ee course.zip from Canvas: located files/Assignments/ee course.zip was unzipped in this repo [here](https://github.com/tekritesh/raspi/tree/main/experiment/ee_course)
 
 3. Unzip, i.e., unzip ee course.zip
@@ -298,32 +303,30 @@ Rerunning the shell script, the code executed successfully and generated the exp
 
 ## 5. Results:
 
-#### Total Time to Run the Tests
+#### Fig1 Total Time to Run the Tests
 ![plot_tests](../experiment/ee_course/plot_tests.jpg)
 
-#### Memory Library Tests
+#### Fig2 Memory Library Tests
 ![plot_memlib](../experiment/ee_course/plot_memlib.jpg)
 
-#### Memory Subsystem Tests
+#### Fig3 Memory Subsystem Tests
 ![plot_memsys](../experiment/ee_course/plot_memsys.jpg)
 
 
 ## 6. Discussion:
-• Interpretation of the results and their implications
-• Comparison with existing literature
-• Limitations of the study
-• Suggestions for future research
+- From Fig1 we can see as the number of tests increases, the time taken to execute them also increases.
+- From Fig2 we can see at the number of tests increase on the X-axis, the temperature as well as the energy consumed by the CPU increase almost linearly with the number of tests.
+- From Fig3 compares the two ways the  matrix addition operation is performed for the same dimension of the two input matrices. 
+
 
 ## 7. Conclusion:
 • Summarize the main findings
 • Emphasize the significance of the results
 
 ## 8. References:
-• Cite all the sources referred to in the report using a consistent citation style (e.g., APA,
-MLA, Chicago)
-• Include books, articles, and other relevant sources
-
-- Wikipedia
+- [Wikipedia](https://www.wikipedia.org/)
+- [RaspberryPi](https://www.raspberrypi.com/)
+- [StackOverFlow](https://stackoverflow.com/)
 
 ## 9. Acknowledgments:
 
@@ -332,5 +335,4 @@ MLA, Chicago)
 
 
 ## 11. Figures and Tables:
-• Numbered and labeled appropriately
-• Captions should be informative and self-contained
+
