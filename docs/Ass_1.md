@@ -238,6 +238,8 @@ The exclude arguements ignores any hidden folder such as git history or files
 1. Setup Verison Control (Github)
 First things first, a github repository was created to keep all the code in one place. 
 
+[Github Repo](https://github.com/tekritesh/raspi)
+
 https://github.com/tekritesh/raspi
 
 *Optional* Setup VSCode SSH 
