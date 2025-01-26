@@ -318,7 +318,7 @@ Rerunning the shell script, the code executed successfully and generated the exp
 ## 6. Discussion:
 - From Fig1 we can see as the number of tests increases, the time taken to execute them also increases.
 - From Fig2 we can see at the number of tests increase on the X-axis, the temperature as well as the energy consumed by the CPU increase almost linearly with the number of tests.
-- From Fig3 compares the two ways the  matrix addition operation is performed for the same dimension of the two input matrices. 
+- From Fig3 we see that the memory usage is significantly higher when the matrix is not loaded from cache.
 
 
 ## 7. Conclusion:
