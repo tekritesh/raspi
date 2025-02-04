@@ -50,21 +50,21 @@ The easiet way to Write an OS image is to use [Pi Imager](https://www.raspberryp
 This tools helps with the following: 
 
 1. Pick the right OS for you
-![OSSelection](../img/Screenshot 2025-01-20 at 12.08.10.png)
+![OSSelection](../img/assignment_1/Screenshot 2025-01-20 at 12.08.10.png)
 
 [More info on the diffent OS](https://www.raspberrypi.com/software/operating-systems/)
 
 2. Setup Login Credentials and Enable SSH
-![LoginSSH](../img/login_ssh.png)
+![LoginSSH](../img/assignment_1/login_ssh.png)
 
 More info on [SSH](https://en.wikipedia.org/wiki/Secure_Shell)
 
 2. Setup Wifi
-![Wifi](../img/wifi.png)
+![Wifi](../img/assignment_1/wifi.png)
 
 
 Once you have specified all the above details, you can go ahead and **Write** the OS image to the SD Card. 
-![OSDownload](../img/os_download.png)
+![OSDownload](../img/assignment_1/os_download.png)
 
 This should take roughly 15mins depending upon your internet connection. Once the writing is done, the tool will notify you that it is safe to eject the SD card from your Computer. 
 
@@ -104,7 +104,7 @@ If you do not need the Desktop variant and are cool enough with the headless ver
     ``` 
         ssh <raspberrypiName>.local
     ```
-    ![SSHLoginEthernet](../img/ssh_ethernet.png)
+    ![SSHLoginEthernet](../img/assignment_1/ssh_ethernet.png)
 
     4. If all goes well, you should be prompted to key in the password that you had set in 4.1.2
 
@@ -116,13 +116,13 @@ If you do not need the Desktop variant and are cool enough with the headless ver
     ``` 
          ssh <raspberrypiName>.local
     ```
-    ![SSHLoginWifi](../img/ssh_ethernet.png)
+    ![SSHLoginWifi](../img/assignment_1/ssh_ethernet.png)
     
     If this commands timeouts, this means that your computer doesn't identify the raspberrypi name and you will have to knwo the IP address of your Rpi. Repeat all the steps 4.3.1 and once you have logged in, run the following command
     ``` 
         hostname -I
     ```
-    ![hostname](../img/hostname.png)
+    ![hostname](../img/assignment_1/hostname.png)
     
     *192.168.4.49* is the IP address you are looking for. 
     
@@ -134,7 +134,7 @@ If you do not need the Desktop variant and are cool enough with the headless ver
     
     Enter the password when prompted and you are in. You are successfully connected to the RPi wirelessly.
 
-    ![sshWifi](../img/ssh_wifi.png)
+    ![sshWifi](../img/assignment_1/ssh_wifi.png)
 
 #### 4.4 Update and upgrade all the software
 
@@ -191,7 +191,7 @@ From you host PC use **scp** to copy over the files to the Raspberry Pi.
 
 Once the file is safely across, log into the Raspberry Pi and go to the directory where the file was placed.
 
-![SCP](../img/scp.png)
+![SCP](../img/assignment_1/scp.png)
 
 Verify if the file looks okay and then compile hellow.c.
 You can run the following to view the contents of the file
@@ -211,7 +211,7 @@ Next you can execute the compiled code to see the results
 ./hellow
 ```
 
-![Compile](../img/compile.png)
+![Compile](../img/assignment_1/compile.png)
 
 
 If you are susccessfully able to see the results, it is safe to conclude that your RPi setup is working. 
@@ -228,7 +228,7 @@ rsync -a --exclude="/.*"  pi@192.168.4.49:<RPi Folder Path>. <Host PC Folder>/.
 
 ```
 
-![Rsync](../img/rsync.png)
+![Rsync](../img/assignment_1/rsync.png)
 
 This keeps the files in the folder names *raspi* on the Host PC upto date with the same folder on the RPI. 
 The exclude arguements ignores any hidden folder such as git history or files
@@ -245,7 +245,7 @@ https://github.com/tekritesh/raspi
 *Optional* Setup VSCode SSH 
 If you are using VSCode as your IDE for coding, you can install the [Remote SSH Client](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) which let's you edit code and access all the files from the RPi as if it were host computer.  
 
-![vscode_ssh](../img/vscode_ssh.png)
+![vscode_ssh](../img/assignment_1/vscode_ssh.png)
 
 2. Downloaded ee course.zip from Canvas: located files/Assignments/ee course.zip was unzipped in this repo [here](https://github.com/tekritesh/raspi/tree/main/experiment/ee_course)
 
@@ -274,7 +274,7 @@ sudo apt install gnuplot
 
 This errors out since it is not able to find the version of RPi
 
-![exp1](../img/exp_1.png)
+![exp1](../img/assignment_1/exp_1.png)
 
 On further investigation it was found that the error was in [*prototype_translate_information*]( https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/prototype.c#L257) function where the RPi used did not match any of the given models. So appropriate changes were by adding this to the [code] https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/prototype.c#L257
 
@@ -295,12 +295,12 @@ cat /proc/cpuinfo
 
 ```
 
-![cpu_info](../img/cpu_info.png)
+![cpu_info](../img/assignment_1/cpu_info.png)
 
 
 Rerunning the shell script, the code executed successfully and generated the expected graphs.
 
-![exp_results](../img/exp_results.png)
+![exp_results](../img/assignment_1/exp_results.png)
 
 
 ## 5. Results:
