@@ -176,7 +176,7 @@ gcc --version
 
 ### 4.10. How long does it take for a context switch?
 
-To test this, a context switch script was written [here](../experiment/ee_course/ctx_measure.c)
+To test this, a context switch script was written [here](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/ctx_measure.c)
 
 ```
 gcc ctx_measure.c -o ctx
@@ -190,7 +190,7 @@ sudo ./ctx
 
 The Interrupt was latched on GPIO 17, where the interrupt Rising Trigger was manually generated with a jumper connected to 3V3. 
 
-To test this, a script was written [here](../experiment/ee_course/interrupt_latency.c)
+To test this, a script was written [here](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/interrupt_latency.c)
  
 The script uses **RPi.GPIO** package to get the pin status.  To install
 
@@ -213,7 +213,7 @@ sudo ./interr
 
 ### 4.12. How much time does it take to copy 1 KB, 1 MB, and 1GB in bytes, half words, and words in RAM?
 
-To test this, a script was written [here](../experiment/ee_course/mem_ram_cp.c)
+To test this, a script was written [here](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/mem_ram_cp.c)
 
 ```
 gcc mem_ram_cp.c -o memram
@@ -225,7 +225,7 @@ gcc mem_ram_cp.c -o memram
 
 ### 4.13. How much time does it take to copy 1 KB, 1 MB, and 1GB in bytes, half words, and words on the filing system?
 
-To test this, a script was written [here](../experiment/ee_course/mem_sd_cpy.c)
+To test this, a script was written [here](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/mem_sd_cpy.c)
 
 To generate files of 1 KB, 1 MB, and 1GB in bytes you can run the following
 ```
@@ -251,7 +251,7 @@ sudo ./memsd
 
 This was done by executing a C script on the host PC which connects to RPi over SSH server, sends the reboot command, keeps pinging to check if the board is alive or not. 
 
-The C script was written [here](../experiment/ee_course/reboot_time.c) . It takes an arguement to either reboot or halt
+The C script was written [here](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/reboot_time.c) . It takes an arguement to either reboot or halt
 
 ```
 gcc reboot_time.c -o reboottime
@@ -267,7 +267,7 @@ No, the reboot time is not deterministic by default while running the Raspberry 
 
 This was done by executing a C script on the host PC which connects to RPi over SSH server, sends the reboot command, keeps pinging to check if the board is alive or not. 
 
-The C script was written [here](../experiment/ee_course/reboot_time.c) . It takes an arguement to either reboot or halt
+The C script was written [here](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/reboot_time.c) . It takes an arguement to either reboot or halt
 
 ```
 gcc reboot_time.c -o reboottime
@@ -282,7 +282,7 @@ gcc reboot_time.c -o reboottime
 
 This was done by executing a C script that performs 4 math operations ie addition, substraction, multiplication and division for 1 billion times. It even takes an arguement for either interger or float point calculations. 
 
-The C script can be found [here](../experiment/ee_course/arithmetic_benchmark.c)
+The C script can be found [here](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/arithmetic_benchmark.c)
 
 
 ```
@@ -305,7 +305,7 @@ gcc arithmetic_benchmark.c -o arithmeticbenchmark
 
 This was written such the 4 parallel threads (2 consumers and 2 producers) are created and a random generate data is shared between the producer and the consumer
 
-The C script can be found [here](../experiment/ee_course/multithread.c)
+The C script can be found [here](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/multithread.c)
 
 
 
@@ -328,7 +328,7 @@ Unfortunately I did not have a smart meter to measure. I could measure the tempe
 
 Putting the system under maximum CPU, GPU, memory and I/O would definitely test the realiability of the Raspberry Pi. 
 
-One such tests is to continuously calculate prime numbers.  An exmaple [code](../experiment/ee_course/stress.c) was written with monitoring enabled to see how the CPU behaves under this stress load. 
+One such tests is to continuously calculate prime numbers.  An exmaple [code](https://github.com/tekritesh/raspi/blob/main/experiment/ee_course/stress.c) was written with monitoring enabled to see how the CPU behaves under this stress load. 
 
 
 ```
