@@ -113,17 +113,14 @@ Init Process: Starts system services and presents a user interface
 
 ![meminfo](../img/assignment_2/mem_info.png)
 
-### 4.8. What is the maximum memory configuration?
 
 
-### 4.9. How many different types of memory are on the board?
+### 4.9. How many different types of memory are on the board? 
 
 RAM (LPDDR4-3200) – Main system memory (2GB, 4GB, or 8GB depending on the model).
 microSD Card – Boot device and persistent storage for the OS and files.
 GPU Shared Memory (VideoCore IV) – Graphics processing memory (shared with RAM).
 EEPROM – Bootloader storage, non-volatile memory for boot configuration.
-
-### 4.10. What is the performance of the memory?
 
 
 ### 4.11. What is the name and release version of the Operating System used on the target board?
@@ -147,8 +144,9 @@ gcc --version
 
 ![ctx](../img/assignment_2/ctx.png)
 
-### 4.14. What is involved in adding an on-switch to the Raspberry Pi?
 ### 4.15. What is the interrupt latency for the board? E.g., from an interrupt to the first instruction executed in the service routine?
+
+The Interrupt was latched on GPIO 17, where the interrupt Rising Trigger was manually generated with a jumper connected to 3V3. 
 
 <img interrupt.png>
 
@@ -161,7 +159,6 @@ sudo apt-get install python-pip python-dev
 sudo pip install RPi.GPIO  
 
 ```
-
 
 ### 4.16. How much time does it take to copy 1 KB, 1 MB, and 1GB in bytes, half words, and words in RAM?
 
@@ -180,17 +177,15 @@ dd if=/dev/urandom of=test_1GB.bin bs=1G count=1
 
 ### 4.18. How long does it take between reboot and an active board? Is it deterministic?
 
-
-
 ![reboot](../img/assignment_2/reboottime.png)
 
 No, the reboot time is not deterministic by default while running the Raspberry Pi OS.  It is because of filesystem checks, some OS service initialisations etc.  It can be made deterministics by optimising some of the boot up services, moving to a read-only filesystem, or by using OS Lite which avoids GUI boot up. 
 
 ### 4.19. How long does it take to halt the board? Is it deterministic?
 
-
-
 ![halt](../img/assignment_2/halt.png)
+
+
 
 ### 4.20. Determine the speed of integer arithmetic with a benchmark.
 
@@ -215,7 +210,8 @@ For Raspberry Pi 4 Model B can operate between 0-85 degrees Celcius
 
 ### 4.24 What is the power consumption without load and with load?
 
-For Raspberry Pi 4B(2GB) the no load power consumption is 3.4 watts  where as Full Load is 7.6 watts
+For Raspberry Pi 4B(2GB) the no load power consumption is 3.4 watts  where as Full Load is 7.6 watts.
+Unfortunately I did not have a smart meter to measure. I could measure the temperature, power and frequency with a script but that is not direct indicator of the power consumption. 
 
 ### 4.25 What would be a useful stress test to determine reliability?
 
@@ -229,6 +225,8 @@ One such tests is to continuously calculate prime numbers.  An exmaple code [str
 gcc stress.c -o stresstest -lm -pthread
 
 ```
+
+![stress](./img/assignment_2/stress.png)
 
 ### 4.26 Does temperature affect performance?
 
@@ -244,6 +242,30 @@ The SoC (System on Chip) may throttle performance when it reaches around 80°C t
 
 <Questions for Project>
 With reference to the project mentioned here <link>, here are some questions to explore the pieces and do a feasibility analysis.  
+
+
+Importance of deep sleep is quite emminent. In that context 2 factors amongst many others that directly affect, are temperature and noise. While there are many applicances today that can take care of the ambient temperature, but there is no device that can reduce the ambient sound noise. So this project is an effort to try to cancel some frequencies of noise using existing home theatre speakers at home. 
+
+In this case, I happen to have a stereo pair of Sonos One SL. So I will work with them. 
+
+Tentative breakdown of this problem:
+
+- Testing Sonos Speaker APIs to control over Wifi
+- Connecting Microphone to RPi
+    - Testing BLE Microphone (nRF52840 with Digital Microphone)
+    - Streaming BLE Microphone to RPi
+    - USB Microphone
+- Testing Setup on PC before Raspberry Pi Deployment
+- Measure Transmission Latency to Play a Chirp Signal on Speaker over WiFi
+- Measure Frequency in Run time for the unit chirp signal
+- Realtime FFT to measure the chirp frequencies 
+- Measure overall system delay
+    - Microphone Latency
+    - Processing Latency
+    - Speaker Latency
+- Productionize package to be deployed.
+
+
 
 ### 5.1 How do setup BLE work on RPI? 
 The commandline *bluetoothctl* is a good way to turn/off and pair devices. 
@@ -264,9 +286,18 @@ bluetoothctl scan on | grep <device name>
 
 ### 5.3 How to connect a microphone to the Rpi? Digital vs Analog Microphone?
 
-### 5.4 What is the latency between tx audio signal to the time it takes on the speaker system?
+### PulseAudio
 
-### 5.6 Pyaudio
+
+
+
+
+• (0) List your level of C proficiency, i.e., beginner, intermediate, or expert
+• (6) points for a clear objective and structured document
+• (15) points for theoretical details i.e. characterization, decomposition, etc.
+• (6) points the quality of the C code created
+• (2) points for insights into limited (1000 unit) or mass (over 10,000 unit) production
+• (1) point for insights and thoughts on how new tools will effect Embedded Systems
 
 
 
@@ -279,6 +310,12 @@ bluetoothctl scan on | grep <device name>
 
 
 ## 7. Conclusion:
+
+
+
+
+
+
 
 ## 8. References:
 - [Wikipedia](https://www.wikipedia.org/)
