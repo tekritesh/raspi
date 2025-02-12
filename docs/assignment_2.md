@@ -138,7 +138,7 @@ Memory Info can be found by running
 lscpu
 ```
 
-<img src="../img/assignment_2/mem_info.png" width="200">
+<img src="../img/assignment_2/mem_info.png" width="400">
 
 
 ### 4.7. How many different types of memory are on the board? 
@@ -161,7 +161,7 @@ cat /etc/os-release
 
 ```
 
-<img src="../img/assignment_2/os_info.png" width="200">
+<img src="../img/assignment_2/os_info.png" width="500">
 
 ### 4.9. What is the compiler name and version?
 
@@ -171,7 +171,7 @@ Compiler info can be found by
 gcc --version
 
 ```
-<img src="../img/assignment_2/gcc_version.png" width="200">
+<img src="../img/assignment_2/gcc_version.png" width="500">
 
 
 ### 4.10. How long does it take for a context switch?
@@ -374,42 +374,37 @@ Finding a parking spot in downtown of any city is a major issue and especially w
 
 The cameras are located on all major jucntions and crossings and have a decent picture as you can see 
 
-<img src="../img/assignment_3/sample.png" width="200"> 
-<img src="../img/assignment_3/sample2.png" width="200">
+<img src="../img/assignment_3/sample.png" width="300"> 
+<img src="../img/assignment_3/sample2.png" width="300">
 
 
-This project aims at querying this data, make a cache, and then run some object detection model on these images to find cars parked by the curbs.
+- This project aims at querying this data, make a cache, and then run some object detection model on these images to find cars parked by the curbs.
 
-A stretch goal is to detect the weather conditions by these images and get a near real time update if it is convinient to walk down a few blocks.
+- A stretch goal is to detect the weather conditions by these images and get a near real time update if it is convinient to walk down a few blocks.
 
-Finally, this could all be overlaid as a custom layer on Open Street Maps. 
+- Finally, this could all be overlaid as a custom layer on Open Street Maps. 
 
-### 5.2 How to fetch images from a server?
+#### 5.2 How to fetch images from a server?
+- Python Package **requests** seems like an option to download images from a url
 
-Python Package **requests** seems like an option to download images from a url
+#### 5.3 How to run YOLO on Rpi?
 
-
-### 5.3 How to run YOLO on Rpi?
-
-Ultralytics has some info [here](https://docs.ultralytics.com/guides/raspberry-pi/).
+- Ultralytics has some info [here](https://docs.ultralytics.com/guides/raspberry-pi/).
 A quick check with this on PC looked promising.
 
 
-<img src="../img/assignment_3/sample3.png" width="200">
+<img src="../img/assignment_3/sample3.png" width="300">
 
-### 5.4 OpenCV on Rpi?
+#### 5.4 OpenCV on Rpi?
+- This maybe used for some segmentation
 
-This maybe used for some segmentation
+#### 5.5 Package Manager to deploy cross architectures and PCs.
 
-### 5.5 Package Manager to deploy cross architectures and PCs.
-
-[Poetry](https://python-poetry.org/) seems to be promisiong for package creation and deployment. 
+- [Poetry](https://python-poetry.org/) seems to be promisiong for package creation and deployment. 
 
 ### 5.6 System Service 
 
-This is to keep running the pipeline on the rpi when it is powered on
-
-[Crontab](https://bc-robotics.com/tutorials/setting-cron-job-raspberry-pi/?srsltid=AfmBOopibJL8Bb3RArlvy8qq1L8XFUEb-gmexj-lIBD0Otu6Lafi7XW8) seems to be a way to get this done.
+- This is to keep running the pipeline on the rpi when it is powered on. [Crontab](https://bc-robotics.com/tutorials/setting-cron-job-raspberry-pi/?srsltid=AfmBOopibJL8Bb3RArlvy8qq1L8XFUEb-gmexj-lIBD0Otu6Lafi7XW8) seems to be a way to get this done.
 
 
 
