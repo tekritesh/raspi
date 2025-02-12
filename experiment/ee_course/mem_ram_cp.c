@@ -8,6 +8,7 @@
 #define MB (1024 * KB)
 #define GB (1024 * MB)
 
+//func calculate time
 uint64_t get_time_in_microseconds() {
     struct timeval tv;
     gettimeofday(&tv, NULL);
@@ -15,6 +16,17 @@ uint64_t get_time_in_microseconds() {
 }
 
 void benchmark_memory_copy(const char *label, void *src, void *dest, size_t size, size_t element_size) {
+    /*
+        Function to profile a copy from one location to another
+        Args:
+            label : name of copy
+            src : src register address
+            dest : dest register address
+            size : size of buffer to copy
+            element_size : size of each element of buffer to copy
+    */
+    
+    
     uint64_t start_time, end_time;
     
     start_time = get_time_in_microseconds();

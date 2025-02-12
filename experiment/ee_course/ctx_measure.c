@@ -6,12 +6,14 @@
 
 #define NUM_ITERATIONS 100000
 
+//func to get time
 uint64_t get_time_in_microseconds() {
     struct timeval tv;
     gettimeofday(&tv, NULL);
     return tv.tv_sec * 1000000 + tv.tv_usec;
 }
 
+// Switching b/w parent and child process by passing a buffer
 int main() {
     int pipe1[2], pipe2[2];
     pid_t pid;

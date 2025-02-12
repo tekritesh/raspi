@@ -7,6 +7,8 @@
 #define MB (1024 * KB)
 #define GB (1024 * MB)
 
+
+//func calculate time
 uint64_t get_time_in_microseconds() {
     struct timeval tv;
     gettimeofday(&tv, NULL);

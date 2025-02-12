@@ -8,8 +8,9 @@
 #include <poll.h>
 #include <linux/gpio.h>
 
-#define GPIO_PIN 17  // Change this to the GPIO pin you want to use
+#define GPIO_PIN 17  
 
+//func to get time
 double get_time_in_microseconds() {
     struct timeval tv;
     gettimeofday(&tv, NULL);
